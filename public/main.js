@@ -7,12 +7,21 @@ const updateCounterInHtml2 = () => {
   document.querySelector('.scoreChange2').textContent = score
 }
 
+const updateTeamOneName = () => {
+  const name = document.querySelector('.nameInput').value
+  document.querySelector('.output').textContent = name
+}
+const updateTeamTwo = () => {
+  const name = document.querySelector('.nameInputTwo').value
+  document.querySelector('.outputTwo').textContent = name
+}
+
 const main = () => {
   console.log('hello there!')
   updateCounterInHtml()
 }
 const addOneToScore1 = () => {
-  console.log('button ws clicked')
+  console.log('button was clicked')
   score += 1
   updateCounterInHtml()
 }
@@ -22,7 +31,7 @@ const subtractOneFromScore1 = () => {
   updateCounterInHtml()
 }
 const addOneToScore2 = () => {
-  console.log('button ws clicked')
+  console.log('button was clicked')
   score += 1
   updateCounterInHtml2()
 }
@@ -31,7 +40,7 @@ const subtractOneFromScore2 = () => {
   score -= 1
   updateCounterInHtml2()
 }
-document.addEventListener('DOMContentLoaded', main)
+
 document
   .querySelector('.team-1-add-1-button')
   .addEventListener('click', addOneToScore1)
@@ -45,3 +54,11 @@ document
 document
   .querySelector('.team-2-subtract-1-button')
   .addEventListener('click', subtractOneFromScore2)
+
+document
+  .querySelector('.update-team-1-name')
+  .addEventListener('click', updateTeamOneName)
+
+document
+  .querySelector('.update-team-2-name')
+  .addEventListener('click', updateTeamTwo)
